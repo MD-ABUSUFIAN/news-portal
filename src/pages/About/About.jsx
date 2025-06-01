@@ -1,9 +1,9 @@
 import React from 'react'
 
-const AboutLayout = () => {
+const About = () => {
   return (
     <div>AboutLayout</div>
   )
 }
 
-export default AboutLayout
+export default About

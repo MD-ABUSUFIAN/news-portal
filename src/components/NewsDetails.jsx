@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { NavLink, useParams } from 'react-router'
+import Header from './Header';
+import NavItemRight from './NavItemRight';
 
 const NewsDetails = () => {
     const {newsId}=useParams();
@@ -12,8 +14,14 @@ const NewsDetails = () => {
 
      
   return (
-       <div className='container mx-auto'>
-         <div className="  shadow p-5  mx-auto mb-10">
+       <div className='container  mx-auto py-5'>
+       <div className="detailsHeader">
+         <Header/>
+       </div>
+    <div className="newsDtailsWrapper grid grid-cols-12">
+      
+        <div className=" newsDetails_Left col-span-9  rounded shadow p-4  mx-auto mb-10">
+          <h1 className='text-[22px] font-bold mb-5'>Dragon News</h1>
       {/* Image */}
       <img
         src={newsDetais[0]?.image_url}
@@ -36,6 +44,11 @@ const NewsDetails = () => {
         ← All news in this category
       </NavLink>
     </div>
+    <div className="newsDetailsRight col-span-3">
+        <NavItemRight/>
+    </div>
+    </div>
+    
        </div>
   )
 }

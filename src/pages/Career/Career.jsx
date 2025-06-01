@@ -1,9 +1,9 @@
 import React from 'react'
 
-const CareerLayout = () => {
+const Career = () => {
   return (
     <div>CareerLayout</div>
   )
 }
 
-export default CareerLayout
+export default Career
