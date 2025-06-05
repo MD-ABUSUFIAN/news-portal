@@ -3,7 +3,7 @@ import { DataContext } from '../../provider/AuthProvider'
 import { useNavigate } from 'react-router';
 
 const Login = () => {
-  const {login,setUser}=useContext(DataContext);
+  const {login,setUser,setError}=useContext(DataContext);
   const navigate=useNavigate()
 
     const handleSubmit=(e)=>{
@@ -13,13 +13,12 @@ const Login = () => {
         const password=form.get("password")    
         login(email,password)   
         .then((userCredential)=>{
-          console.log("login hit");
-          
+        
           const result=userCredential.user
           setUser(result)
           navigate('/')
         }).catch((error)=>{
-          console.error(error.message,error.code)
+       setError(error.message)
         })
     
     }

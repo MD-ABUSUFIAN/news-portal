@@ -3,9 +3,9 @@ import { DataContext } from '../../provider/AuthProvider';
 import { Navigate, useNavigate } from 'react-router';
 
 const Register = () => {
-  const {register,user,setUser,update} = useContext(DataContext);
+  const {register,setUser,update,setError} = useContext(DataContext);
   const [checkedIn, setCheckedIn] = useState(false);
-  const [error,setError]=useState("")
+ 
   const navigate=useNavigate()
 
   const handleRegister = (e) => {
@@ -27,7 +27,7 @@ const Register = () => {
     
     .then(() => {
       // Profile updated!
-      console.log("user data successfully updated");
+     
     })})
     .catch((error)=>{
       setError(error.code, error.message)

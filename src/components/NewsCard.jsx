@@ -3,8 +3,7 @@ import { FaEye, FaStar, FaShareAlt } from 'react-icons/fa';
 import { NavLink } from 'react-router';
 
 const NewsCard = ({ news }) => {
-    console.log(news);
-    
+
   return (
     <div className="bg-white rounded-lg shadow-md p-4 mb-6">
       {/* Author & Share */}
